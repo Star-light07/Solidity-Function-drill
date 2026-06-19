@@ -71,7 +71,7 @@ function allowance(address _addr1, address _addr2) public view returns(uint256){
    return amount[_addr1][_addr2];
 }
 
-Task:
+//Task:
     // Define a struct called Person with three fields: name (string), age (uint256), and wallet (address). Write a function 
     // addPerson that creates a new Person and stores it. Write a function getPerson that takes an address and returns that 
     // person's name and age.
@@ -96,7 +96,7 @@ function addPerson(string memory _name, uint _age, address _person) public {
 
 }
 
-function getPerson( address _person) public view returns(string , uint256){
+function getPerson( address _person) public view returns(string memory, uint256){
 
   return ( (persons)[_person].name, (persons)[_person].age );
 }
@@ -144,25 +144,6 @@ function addNumber( uint256 num) public {
 function getNumber( uint256 num) public view returns(uint256) {
 
     return arr[num];
-}
-
-
-
-// Function #8 — Arrays (length + loop)
-// Task:
-// Using the same uint256[] array from #7, write a function sumAll that loops through the array and
-//  returns the sum of all numbers in it.
-
-function sumAll(unit256 num) public {
-
-    for(uint i = 0; i < num; i++  ){
-
-        
-    arr.sum(i);
-
-
-    }
-
 }
 
 
@@ -218,13 +199,9 @@ function findMax() public view returns(uint256){
 
 function removeAt(uint256 _index) public {
 
-    for(uint i = 0; i < arr.length; i++){
+    arr[_index] = arr[arr.length - 1];
 
-        arr.pop(_index);
-    }
-
-    return arr[];
-
+    arr.pop();
 
 }
 }
