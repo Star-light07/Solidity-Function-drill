@@ -139,19 +139,42 @@ contract FunctionDrill {
                 largest = arr[i];
             }
         }
-
         return largest;
     }
-
     // Function #10 — Arrays (remove by index)
     // Task:
     // Write a function removeAt that takes an index and removes the element at that index from the uint256[] array. Order doesn't matter — you can move the last element into that spot and then pop.
     // Hint: This is a common gas-efficient pattern. You'll see it in real contracts.
     // Go.
-
     function removeAt(uint256 _index) public {
         arr[_index] = arr[arr.length - 1];
 
         arr.pop();
     }
+
+//Write countEvens — loops through the uint256[] array and returns how many even
+ numbers are in it.
+Hint: modulo %
+
+
+function countEvens() public view returns(uint256) {
+
+    uint256 count = 0;
+
+    for(uint256 i = 0; i < arr.length; i++){
+
+        if(arr[i] % 2 == 0){
+
+          count++;
+        }
+    }
+
+    return count;
+
+
+
+}
+
+
+
 }
