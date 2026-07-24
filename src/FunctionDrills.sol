@@ -153,8 +153,8 @@ contract FunctionDrill {
     }
 
 //Write countEvens — loops through the uint256[] array and returns how many even
- numbers are in it.
-Hint: modulo %
+//  numbers are in it.
+// Hint: modulo %
 
 
 function countEvens() public view returns(uint256) {
@@ -175,6 +175,49 @@ function countEvens() public view returns(uint256) {
 
 }
 
+// //Write a function getEvens that loops through 
+// the uint256[] array and returns a new array containing only the even numbers.
+
+// This one's trickier — memory arrays in Solidity have fixed sizes. 
+// You'll need to think about how to size the new array before filling it.
+// Loop 1: count how many evens exist — you literally wrote this in #11.
+
+// Then: create a new memory array with exactly that size. Syntax to research: new uint256[](size)
+
+// Loop 2: walk the array again, put each even number into the new array.
+//  You'll need a separate counter to track where in the new array you're writing.
 
 
+function getEvens() public  returns(uint256[]){
+    uint256 num = 0;
+
+    for( uint256 i = 0; i < arr.length ;  i++){
+
+        if(arr[i] % 2 ==0){
+
+            num++;
+        }
+    }
+
+    uint256[] memory evens = new uint256[] (num);
+
+    uint256 count = 0;
+
+
+
+for( uint256 i = 0; i < arr.length; i++){
+
+    if(arr[i] % 2 == 0){
+
+        evens[count] = arr[i];
+
+        count++
+    }
+
+    return evens[];
+}
+
+
+    
+}
 }
